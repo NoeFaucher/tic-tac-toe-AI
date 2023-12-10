@@ -25,7 +25,7 @@ fn main() {
                 break;
             }
 
-            // Simulate opponent's move (you can replace this with actual opponent logic)
+            // Simulate opponent's move
             println!("Opponent to play (O):");
             let opponent_move = game.get_best_move(Cell::O).unwrap();
             game.play_move(Cell::O, opponent_move);
@@ -34,6 +34,10 @@ fn main() {
         }
 
     }
+    
+
+    println!("Game finished!");
+    game.show();
 
     match game.ended().unwrap() {
         game::EndStatus::Draw => println!("That's a draw !"),
